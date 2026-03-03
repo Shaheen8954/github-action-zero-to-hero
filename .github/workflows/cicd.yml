@@ -9,7 +9,7 @@ on:
 jobs:
 # every job needs seperate runner called parrarelism
   code:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout codes
         run: echo "clone the code from github"
@@ -17,7 +17,7 @@ jobs:
 
   build:
     needs: [code]
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: build the container
         run: echo " build the docker container"
@@ -26,7 +26,7 @@ jobs:
 
   test:
     needs: [build]
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: test the container
         run: echo "test the container"
@@ -36,7 +36,7 @@ jobs:
 
   deploy:
     needs: [test]
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: deploy the app
         run: echo " docker compose deploy the app"

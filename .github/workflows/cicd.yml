@@ -5,6 +5,16 @@ name: cicd
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: This is the value where this workflow runs
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
 
 jobs:
 # every job needs seperate runner called parrarelism

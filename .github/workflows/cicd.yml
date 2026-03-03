@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-
+# every job needs seperate runner called parrarelism
   code:
     runs-on: ubuntu:latest
     steps:
